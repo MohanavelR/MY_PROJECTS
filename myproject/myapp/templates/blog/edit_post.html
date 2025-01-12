@@ -1,0 +1,55 @@
+{% extends "base/base.html" %}
+{%block title %}
+Edit Post
+{% endblock %}
+{% block contant %}
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center mt-5">
+            <div class="col-4">
+                <h3>Edit Post</h3>
+                <div class="">
+                    <!-- Error messages -->
+        <!-- start Messages -->
+        {% include 'includes/errors.html'%} 
+        <!-- End Messages -->                      
+                <div class="my-3">
+                    <form method="post" p-3 enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group p-2 ">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" name="title" id="title" value="{{post.title}}">
+                        </div>
+                       
+                        <div class="form-group p-2 ">
+                            <label for="content" class="form-label">Content</label>
+                            <textarea class="form-control" id="content"  name="content">{{post.content}}</textarea>
+                        </div>
+
+                        <div class="form-group p-2 ">
+                            <label for="img_url" class="form-label">Image</label>
+                            <input type="file" class="form-control-file" id="img_url"  name="img_url">
+                        </div>
+                        <div class="form-group p-2 ">
+                            <label for="category" class="form-label">Category</label>
+                            <select class="form-control" id="category" name="category" value="{{post.category}}" >
+                                <option value="">Select</option>
+                                {% if category %}
+                                {% for categorys in category %}
+                                <option {% if post.catetogy.id == category.id %} selected {% endif %} value="{{categorys.id}}">{{categorys.name}}</option>
+                                {% endfor %}
+                                {% endif %}
+                                
+                            </select>
+                        </div>
+                       
+                        <div class="my-3 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    
+    
