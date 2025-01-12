@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, rgb(188, 60, 0),rgb(115, 115, 165),rgb(206, 46, 35));
+}
+div{
+    font-size: 100px;
+    color: white;
+}
+p{
+    padding: 5px;
+}
+span{
+    margin-right: 5px;
+}
