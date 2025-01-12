@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <style>
+        table,td,th,tr{
+            border: 2px solid black;
+            border-collapse:collapse ;
+            padding: 10px;
+            margin: 50px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+    <h1> User Management System</h1>
+      {% with messages =get_flashed_messages() %}
+       {% if messages %}
+       {% for message in messages %}
+       <div id="message">
+         <h3>{{message}}</h3>
+       </div>
+       {% endfor %}
+       {%endif %}
+      {% endwith %}
+    <a href="{{url_for( 'adduser')}}">Add</a>
+  <table>
+    <thead>
+        <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th colspan="2">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for data in datas %}
+            <tr>
+                <td>{{data.id}}</td>
+                <td>{{data.name}}</td>
+                <td>{{data.age}}</td>
+                <td>{{data.city}}</td>
+                <td><a href="{{url_for('EditUser',id=data.id)}}">Edit</a></td>
+                <td><a onclick="confirm('Are sure Delete')" href="{{url_for('DeleteUser',id=data.id)}}">Delete</a></td>
+            </tr>
+        {% endfor %}
+
+    </tbody>
+  </table>
+  <script>
+   let message=document.getElementById('message')
+   setTimeout(()=>{
+    message.style.display='none'
+   },2000)
+  </script>
+</body>
+</html>
