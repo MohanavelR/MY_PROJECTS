@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>🏆GAME</title>
+        <link rel="icon" href="photo.jpg">
+        <link rel="stylesheet" href="CSS.css">
+
+
+        <!--CSS-->
+
+
+
+    </head>
+<body>
+<div id="heading">
+      <h1 id="head1">GUESSING GAME</h1>
+</div>
+<div id="all">
+    <div id="head2">
+       <!--<h4>ENTER GUESS NUMBER</h4>-->
+         <input id="yournumber" placeholder="Enter the number">
+    </div>
+    <button onclick="check()">check</button>
+    <h3 id="answer">YOU ARE RIGHT OR WRONG :</h3>
+    <div id="head3"class="value">
+        <h6 id="result"></h6>
+    </div>
+    <div id="head4" class="value"> 
+         <h6 id="sc">SCORE:10</h6>
+    </div>
+</div>
+
+
+
+<!--JAVA SCRIPT-->
+
+
+
+<script>
+    var guessnum=document.getElementById("yournumber")
+    var result=document.getElementById("result")
+    var SCORE=document.getElementById("sc")
+    var systemnum=Math.floor(Math.random()*10)+1
+    var totalscore=10
+    function check(){
+        var enternum=guessnum.value
+        if(enternum==systemnum)
+        {
+            result.textContent="Right congrats"
+            head3.style.backgroundColor="green"
+            head4.style.backgroundColor="green"
+            
+            }
+        else{
+            totalscore=--totalscore
+            SCORE.textContent="SCORE:"+totalscore
+            result.textContent="wrong"
+            head3.style.backgroundColor="red"
+            head4.style.backgroundColor="red"
+
+            
+        }
+    }
+</script>
+</body>
+</html>
