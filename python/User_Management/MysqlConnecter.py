@@ -29,11 +29,6 @@ class DataBase():
             self.connection.execute(sql,(id,))
             # self.mysql.commit()
             # self.connection.close()     
-# objects=DataBase()
-
-# objects.AddFriends(name='Mohanavel.R',age=21,DOB='16-12-2003',email='rmohanavel2003@gmail.com',phone='7397543180',gender='Male',address='Kullampatti,Edappadi,salem-637101',)    
-# print(objects.FetchData) 
-# objects.Update_Details(name='Mohanavel.R',age=21,DOB='16-12-2002',email='rmohanavel2003@gmail.com',phone='7397543180',gender='Male',address='Kullampatti,Edappadi,salem-637101',id=1)
 
 
 
