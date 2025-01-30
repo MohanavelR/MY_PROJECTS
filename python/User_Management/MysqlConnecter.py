@@ -47,7 +47,5 @@ class DataBase():
              gender varchar(20),
              address varchar(500)
              );
-insert into friends(name,age,DOB,email,phone,gender,address) values ("Mohanavel.R",21,'16-12-2003','rmohanavel2003@gmail.com','7397543180',"Male",'kullampatti,edappadi,salem-637101');
-
 
         '''
