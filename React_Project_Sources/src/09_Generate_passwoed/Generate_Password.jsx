@@ -31,7 +31,7 @@ export const Generate_Password = () => {
         
       }   
         let words=''
-        for(let i=0;i<=obj.count;i++){
+        for(let i=1;i<=obj.count;i++){
           let random=Math.floor(Math.random() * charactor.length)
           words+=charactor.charAt(random)
         }
@@ -78,19 +78,19 @@ function Clear(){
         </div>  
         <div className="mb-3 d-flex  gap-3">
         <input onChange={(e)=>setObj({...obj,lower:e.target.checked})} checked={obj.lower} type="checkbox" className="form" id="exampleFormControlInput2" placeholder="" />
-        <label htmlFor="exampleFormControlInput2" className="form-label">Lower Charactor</label>
+        <label htmlFor="exampleFormControlInput2" className="form-label">Lower Character</label>
     </div> 
     <div className="mb-3 d-flex  gap-3">
         <input onChange={(e)=>setObj({...obj,upper:e.target.checked})} checked={obj.upper}  type="checkbox" className="form-checkbox" id="exampleFormControlInput3" placeholder="" />
-        <label  htmlFor="exampleFormControlInput3" className="form-label">Upper Charactor </label>
+        <label  htmlFor="exampleFormControlInput3" className="form-label">Upper Character </label>
     </div>   
     <div className="mb-3 d-flex  gap-3">
         <input onChange={(e)=>setObj({...obj,number:e.target.checked})} checked={obj.number}   type="checkbox" className="form" id="exampleFormControlInput4" placeholder="" />
-        <label htmlFor="exampleFormControlInput4" className="form-label">Number Charactor</label>
+        <label htmlFor="exampleFormControlInput4" className="form-label">Number Character</label>
     </div>   
     <div className="mb-3 d-flex gap-3">
         <input onChange={(e)=>setObj({...obj,special:e.target.checked})} checked={obj.special}  type="checkbox" className="form" id="exampleFormControlInput5" placeholder="" />
-        <label htmlFor="exampleFormControlInput5" className="form-label">Speciel Charactor</label>
+        <label htmlFor="exampleFormControlInput5" className="form-label">Speciel Character</label>
     </div>   
     
     <div className="mb-3">

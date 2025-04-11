@@ -5,24 +5,26 @@ export const QR_Scanner = () => {
   const [url, setUrl] = useState("images/Qr_code.png");
   const [get_url, setGet_url] = useState("Please Privide Your Data");
   const [load, setLoad] = useState(false);
-  const [text, setText] = useState("");
+  const [text, setText] = useState(false);
   const [size, setSize] = useState(200);
   function Generate() {
-    setLoad(true);
+    
     setText("Please Wait...");
     setUrl("");
     try{
-
+       setLoad(true);
       setTimeout(() => {
   
         const urls = `http://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${get_url}`;
         setUrl(urls);
         setLoad(false);
-        setText("");
+        
       }, 2000);
     }
     catch (error){
-      setText("Error Generating QR code ",error)
+     setLoad(false)
+      setText(true)
+      
     }
   }
   function Download() {
@@ -45,7 +47,8 @@ export const QR_Scanner = () => {
             <span class="visually-hidden">Loading...</span>
           </div>
         )}
-        {text}
+        {text && <p>Failed to Generate QR code.</p> 
+         }
         <img src={url} alt="" />
       </div>
       <div className="col-8 d-flex scanner p-3 text-white gap-3 rounded">

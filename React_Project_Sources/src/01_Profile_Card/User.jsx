@@ -4,7 +4,7 @@ export const User = ({user}) => {
   return (
     <div>
         <div className="card border-1 p-2  rounded text-white" >
-        <h6 className='m-2'><span class={`badge ${user.is_online ? "bg-warning ":"bg-secondary"} `}>{user.is_online ? "Online ":"Offline"} </span></h6>
+        <h6 className='m-2'><span className={`badge ${user.is_online ? "bg-warning ":"bg-secondary"} `}>{user.is_online ? "Online ":"Offline"} </span></h6>
         <div className='img-div col-12 d-flex justify-content-center align-items-center'>
 
         <img src='images/profile.jpeg' className="card-img-top  img rounded circle " alt="..." />
@@ -20,11 +20,8 @@ export const User = ({user}) => {
                  <button className='btn btn-primary'>Message</button>
                  <button className='btn btn-secondary'>Following</button>
         </div>
-        {/* <ul className="list-group list-group-flush">
-            <li className="list-group-item">An item</li>
-            <li className="list-group-item">A second item</li>
-            <li className="list-group-item">A third item</li>
-        </ul> */}
+       
+
         <hr />
         
         <div className="card-body col-12 ">

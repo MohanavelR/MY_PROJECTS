@@ -31,7 +31,7 @@ const WeatherApp = () => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${apiKey}&units=metric`;
     try{
       let data= await fetch(url)
-      if(data.ok){
+      if(!data.ok){
         setError(true)
         setCityNotFound(false)
       }
@@ -52,7 +52,6 @@ const WeatherApp = () => {
  }  
  finally{
   setLoad(false)
-
   setTimeout(()=>{
     setError(false)
     setCityNotFound(true)
